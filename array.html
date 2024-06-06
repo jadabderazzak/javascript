@@ -1,0 +1,59 @@
+<script>
+
+    /********************************************/
+    // Find Maximum and Minimum: Write functions to find the maximum and minimum values in an array of numbers.
+    function maxMin(arr) {
+
+        // Récuperer que les éléments numériques si le tableau contient un object non numerique
+        var numeriques = arr.filter(function (value) {
+            return typeof value === "number" && !isNaN(value);
+        });
+
+        var min = Math.min(...numeriques);
+        var max = Math.max(...numeriques);
+
+        return "Max value is " + max + " Min value is " + min;
+    }
+
+    // output
+    console.log(maxMin([10, 3, 4, 10, "ff"]))
+
+
+    /********************************************/
+    // Sum of Array: Create a function that calculates the sum of all elements in an array.
+    function sumNumbers(arr) {
+
+        // Récuperer que les éléments numériques si le tableau contient un object non numerique
+        var tableau = arr.filter(function (value) {
+            return typeof value === "number" && !isNaN(value);
+        });
+
+        var sum = 0;
+        for (var i = 0; i < tableau.length; i++) {
+            sum += tableau[i];
+        }
+        return sum;
+    }
+
+    // output
+    console.log(sumNumbers([1, 2, 3, 4, 5]))
+
+    /********************************************/
+    // Filter Array: Implement a function that filters out elements from an array based on a given condition.
+    function filterArray(array, condition) {
+        var filteredArray = [];
+        for (var i = 0; i < array.length; i++) {
+            if (condition(array[i])) {
+                filteredArray.push(array[i]);
+            }
+        }
+        return filteredArray;
+    }
+
+    // output
+    console.log(filterArray([1, 2, 3, 4, 5], function (value) {
+        return value < 2;
+    }))
+
+
+</script>
