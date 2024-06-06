@@ -1,0 +1,49 @@
+<script>
+
+    /********************************************/
+    // Factorial: Write a function to calculate the factorial of a given number.
+    function factorialFunction(num) {
+
+        if (num === 0 || num === 1) {
+            return 1;
+        }
+        return num * factorialFunction(num - 1);
+    }
+
+    // output
+    console.log(factorialFunction(10))
+
+
+    /********************************************/
+    // Prime Number Check: Create a function to check if a number is prime or not.
+    function primeNumber(num) {
+
+        for (var i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // output
+    console.log(primeNumber(17))
+
+    /********************************************/
+    // Fibonacci Sequence: Implement a function to generate the Fibonacci sequence up to a given number of terms. (search on the net )
+    function fiboSeq(num) {
+
+        var fibo = [0, 1]; //Initialisé fibo avec les 2 premieres séquences
+        for ( i = 2; i < num; i++) {
+           
+            fibo.push(fibo[i - 1] + fibo[i - 2]);
+        }
+        return fibo;
+    }
+
+    // output
+    console.log(fiboSeq(11))
+
+
+
+</script>
